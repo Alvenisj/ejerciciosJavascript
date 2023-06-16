@@ -391,3 +391,145 @@
 // const c = fibonacci(8);
 // console.log(c);
 
+
+
+// INVERTIR CADENA DE CARACTERES, resuelto desde 3 perspectivas diferentes.
+
+// Primera forma, usando el bucle "for of"
+// const str = "Alvenis";
+// function inverString( strg ) {
+//      let word = "";
+//       for ( letra of strg ) {  
+//         //LAS LETRAS SE VAN ACOMODANDO DE DERECHA A IZQUIERDA
+//         // sinevlA
+//           word = letra + word;
+//       }  
+//   return word;
+// }
+
+// const print = inverString( str );
+// console.log( print );
+
+// Segunda forma usando el bucle "for TRADICIONAL"
+ // const str = "Alvenis";
+ // function invertirString( strg ) {
+ //   let word = "";
+ //    for ( let i = strg.length - 1; i>=0 ; i-- ) { 
+ //      word += strg[i]
+ //    }
+ //   return word;  
+ // }
+ // const print = invertirString( str );
+ // console.log(print);
+
+// Tercera forma, usando métodos "split, reverse, join"
+// const word = "Alvenis";
+// const neWord = word.split('').reverse().join('')
+// console.log(neWord);
+
+
+// CONTAR ELEMENTOS REPETIDOS EN UN ARRAY e imprimir en un array de objetos el número y, las veces que se repite...
+
+// Primera forma, usando el método "forEach", "entries", "reduce" e iterar el array usando un contador de elementos a través de un operador ternario.
+// const num = [ 7, 33, 10, 9, 8, 7, 2, 5, 5, 33, 33, 33, 
+//                  33, 7 ];
+// const countElementRepeted = ( n ) => { 
+//   let objeto = {};
+//   n.forEach( num => {
+//     objeto[num] = !objeto[num] ? 1 : objeto[num] += 1;
+//   })
+//    return  Object.keys(objeto)
+//             .map( n => ({ number: n, count: objeto[n] }))
+// };
+// const print = countElementRepeted(num);
+// console.log(print);
+
+// Segunda forma, usando el Objeto "Set()"; Un valor en un "Set" sólo puede ocurrir una vez.
+
+// const arrayNumbers = [ 7, 33, 10, 9, 8, 7, 2, 5, 5, 33, 33, 33, 
+//                  33, 7 ];
+//  function countElementRepeted( arrNum ) {
+//    const result = [ ...new Set(arrNum) ].map( num => {
+//      return {
+//          elemento: num,
+//          count: arrNum.filter( n => n === num ).length
+//        }
+//       });
+   
+//    return result;
+//  }
+
+// const print = countElementRepeted(arrayNumbers);
+// console.log(print);
+
+// Tercera forma, usando ÚNICAMENTE estructuras de control "A PIE, SIN MÉTODOS".
+// const arrayNumbers = [ 7, 33, 10, 9, 8, 7, 2, 5, 5, 33, 33, 33, 
+//                  33, 7 ];
+// function countElementRepeted( arrNum ) {
+//   const resultSct = [];
+//    // Si se encuentra el elemento realiza esto:
+//   for ( let num of arrNum ) {
+//       let numNew = true;
+//       for ( let n of resultSct ) {
+//           if ( n.elemento === num ) {
+//             n.count++;
+//             numNew = false;
+//           } 
+//         }  
+//         // Si se encuentra el elemento por primera vez:
+//       if ( numNew ) {   
+//         resultSct[resultSct.length] = {
+//           elemento: num,
+//           count: 1    
+//       }        
+//   }
+//  } 
+//   return resultSct; 
+// }
+// const print = countElementRepeted(arrayNumbers);
+// console.log(print);
+
+
+
+// Crear una funcion que reciba un STRING (cadena de caracteres), y limpie los espacios, dejando ÚNICAMENTE un espacio entre palabras; luego convierta el string en un ARRAY; Ejemplo: 
+// const strg = 'Hola    soy  Alvenis José';
+// const strg = 'Hola soy Alvenis José' --> sin espacios...
+// array = [ 'Hola', 'soy', 'Alvenis', 'José' ] --> convertido en array
+
+// Primera forma, usando MÉTODOS "replace", "split", con expresiones regulares.
+// const strg = "Hola    soy  Alvenis José";
+// const wordSpaces = ( str ) => { 
+//   const replaced = str.replace(/\s+/gi, ' ');
+//   const splitted = replaced.split(' ')
+  
+//   return splitted; 
+// }
+
+// const print = wordSpaces( strg );
+// console.log(print);
+
+// Segunda forma, usando ESTRUCTURAS DE CONTROL, "A PIE, SIN MÉTODOS".
+// const strg = "Hola    soy  Alvenis    Jose";
+// const wordSpaces = ( str ) => { 
+//     let arr = [];
+//     let caracter = "";
+//     for ( let letra of str ) {
+//        if ( letra !== " " ) {
+//           caracter += letra;
+//           // console.log(caracter)
+//         } else if ( caracter.length > 0 ) {
+//           arr[arr.length] = caracter; 
+//           caracter = "";
+//         }
+//     }
+//       if ( caracter.length > 0 ) {
+//         arr[arr.length] = caracter;
+//       }  
+//       return arr; 
+// }
+// const print =  wordSpaces( strg );
+//  console.log(print);
+
+
+
+
