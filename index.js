@@ -531,28 +531,21 @@
 //  console.log(print);
 
 
+// Dada url: https://pokeapi.co/api/v2/pokemon/ditto
+// 1.- Crear una llamada a la Api, utilizando fetch(); con el objetivo de utilizar esos datos con cualquier librería o framework de Js. La función debe ser a prueba de errores, es decir, si es correcta debería de regresar los resultados, de lo contrario, debería de regresar un error.
 
-const memoization = ( fn  ) => {
-    let results = { };
-    
-      return function( arg ) {
-          if ( !results[arg] ) { 
-             results[arg] = fn(arg);
-          } 
-            return results[arg];
-      }
-    
-  }
+// const getPokemon = async ( ) => {
   
-  const setNumbers = memoization( ( limit ) => {
-      let sum = 0;
-      for ( let i = 0; i<limit; i++ ) {
-        sum += i;
-      }
-  
-      return sum;
-  });
-  console.time('Probando');
-  console.log(setNumbers(10));
-  
-  console.timeEnd('Probando');
+//   try {
+//      const response = await fetch('https://pokeapi.co/api/v2/pokemon/ditto');
+//      const data =     await response.json();
+//      return data;    
+//   } catch ( e ) {  
+//     console.error(`Error: ${e}`);
+//   }
+// }
+
+// getPokemon().then( (datos) => {
+//   console.log( datos );
+// }).catch( err => console.error(err) )
+
