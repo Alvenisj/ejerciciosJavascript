@@ -549,3 +549,50 @@
 //   console.log( datos );
 // }).catch( err => console.error(err) )
 
+
+// Ejercicio de memoization con promesas
+// const memoization = ( fn ) => {
+//     let results = {};
+//       return ( arg ) => {
+//           if( !results[arg] ) {
+//              // para probar las veces que entra
+//             console.log(`resultado ${arg} NO GUARDADO AÚN`)
+//             results[arg] = fn(arg);
+//           } else {
+//             // para probar las veces que entra
+//             console.log(`resultado ${arg} YA GUARDADO`);
+//           }
+//         return results[arg];
+//       } 
+//   }
+  
+// instanciamos el CLOSURE de la función memoization y hacemos una petición a un servicio externo, con el objetivo de OPTIMIZAR la petición del recurso a la Api externa.
+  //'https://jsonplaceholder.typicode.com/todos/1'
+//   const request = memoization( async id => {
+//     //para probar las veces que se ejecuta el callback que recibe la memoization
+//     console.log("se EJECUTÓ");
+//      let response = await fetch(`https://jsonplaceholder.typicode.com/todos/${id}`)
+//      let data = await response.json();
+//      return data;
+     
+//   } )
+  
+//   request(1)  
+//     .then( datos => console.log(datos))
+//     .catch( err => console.error(`Ha ocurrido un error ${err}`)  );
+  
+//   request(1)  
+//     .then( datos => console.log(datos))
+//     .catch( err => console.error(`Ha ocurrido un error ${err}`) );
+
+      
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
