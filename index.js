@@ -586,7 +586,25 @@
 //     .catch( err => console.error(`Ha ocurrido un error ${err}`) );
 
       
+  // Ejercicios con closures
+
+//   function crearImpresoraMensajes( tipo, estilos ) {
+
+
+//     return function mensaje( str ) {
+//       console.log(`%c ${tipo} ${str}`, estilos );
+//     }
   
+    
+//   }
+  
+//   const warning = crearImpresoraMensajes('Advertencia:', 'background: orange; color: white;');
+//   const error = crearImpresoraMensajes('Error:', 'background: red; color: white;');
+//   const exito = crearImpresoraMensajes('Exito:', 'background: green; color: white,');
+  
+//   warning('El usuario no registró el Email');
+//   error('El usuario no inición sesión');
+//   exito('Usuario registrado satisfactoriamente');
   
   
   
