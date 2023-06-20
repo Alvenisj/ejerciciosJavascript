@@ -532,4 +532,27 @@
 
 
 
-
+const memoization = ( fn  ) => {
+    let results = { };
+    
+      return function( arg ) {
+          if ( !results[arg] ) { 
+             results[arg] = fn(arg);
+          } 
+            return results[arg];
+      }
+    
+  }
+  
+  const setNumbers = memoization( ( limit ) => {
+      let sum = 0;
+      for ( let i = 0; i<limit; i++ ) {
+        sum += i;
+      }
+  
+      return sum;
+  });
+  console.time('Probando');
+  console.log(setNumbers(10));
+  
+  console.timeEnd('Probando');
