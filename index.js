@@ -122,8 +122,7 @@
 // ejemplo: Input: nums = [3,2,4] target= 6
 //         Output: [1,2]
 
-// const isArray = [22, 11, 7, 15, 8];
-
+// const isArray = [22, 11, 7, 15, 8, 22];
 // function sumaDosNumeros(arr, target) {
 //   const isObject = new Map();
 //   let n = arr.length;
@@ -134,7 +133,7 @@
 //     let diffValue = target - currentValue;
 
 //     if (isObject.has(diffValue)) {
-//        result = [isObject.get(diffValue), i];
+//       result = [isObject.get(diffValue), i];
 //     }
 
 //     isObject.set(currentValue, i);
@@ -143,7 +142,7 @@
 //   return result;
 // }
 
-// const print = sumaDosNumeros(isArray, 37);
+// const print = sumaDosNumeros(isArray, 44);
 // console.log(print);
 
 // Dada una palabra, buscarla en una frase y devolver cuántas veces aparece. La frase y la palabra DEBEN ser parametros de una función...
@@ -371,18 +370,17 @@
 
 // Crear una función a la cual se le pase un array de números y un número que será el resultado de la suma de dos valores del array, ejemplo: sumarDos([ 4, 5, 9, 1 ], 10) -- devuelve [ 9, 1 ]
 
-// const isArray = [30, 7, 8, 15];
+// const isArray = [30, 7, 8, 15, 30];
 // function sumNumbers(arr, target) {
 //   let result = [];
-//   let n = arr.length;
-//   //Recorrer el array de números
-//   for (let i = 0; i < n; i++) {
-//     let currentValue = arr[i];
+//   let isObjeto = new Set();
+//   for (let currentValue of arr) {
 //     let diffValue = target - currentValue;
-
-//     if (arr.includes(diffValue) && diffValue !== currentValue) {
+//     if (isObjeto.has(diffValue)) {
 //       result = [diffValue, currentValue];
+//       break;
 //     }
+//     isObjeto.add(currentValue);
 //   }
 
 //   return result;
@@ -478,19 +476,19 @@
 // console.log(print);
 
 // Segunda forma, usando el Objeto "Set()"; Un valor en un "Set" sólo puede ocurrir una vez.
+
 // const arrayNumbers = [7, 33, 10, 9, 8, 7, 2, 5, 5, 33, 33, 33, 33, 7];
 // function countElementRepeted(arrNum) {
 //   const isObjectSet = new Set(arrNum);
 
-//    const result = [ ...isObjectSet ]
-//   .map( num => {
+//   const result = [...isObjectSet].map((num) => {
 //     return {
 //       number: num,
-//       count: arrNum.filter( n => n === num ).length
-//     }
-//   })
+//       times: arrNum.filter((n) => n === num).length,
+//     };
+//   });
 
-//    return result;
+//   return result.sort((a, b) => b.times - a.times); // ordenado descendente
 // }
 
 // const print = countElementRepeted(arrayNumbers);
