@@ -99,24 +99,32 @@
 // const print = romanoToEntero("xl");
 // console.log(print);
 
-// Hacer una función que retorne true si es un número primo y, false si no es un número primo
-// function numberIsPrimo(n) {
-//   if (n <= 0) return `El número: "${n}" NO ES PRIMO...`;
+// Hacer una función que muestre si es un número primo y, en caso contrario si no es un número primo.
+function numberIsPrimo(n) {
+  if (typeof n !== "number") {
+    throw new Error("El parámetro DEBE ser numerico");
+  }
+  if (n <= 0) {
+    throw new Error("El parámetro DEBE ser mayor a cero...");
+  }
 
-//   const divisible = (n, multiplo) => !(n % multiplo);
+  const divisible = (n, multiplo) => !(n % multiplo);
+  let contador = 0;
+  for (let i = 1; i <= n; i++) {
+    if (divisible(n, i)) contador++;
+  }
 
-//   let contador = 0;
-//   for (let i = 1; i <= n; i++) {
-//     if (divisible(n, i)) contador++;
-//   }
+  return contador === 2
+    ? `El número: "${n}" ES PRIMO`
+    : `El número: "${n}" NO ES PRIMO!!`;
+}
 
-//   return contador === 2
-//     ? `El número: "${n}" ES PRIMO`
-//     : `El número: "${n}" NO ES PRIMO!!`
-// }
-
-// const print = numberIsPrimo(37);
-// console.log(print);
+try {
+  const print = numberIsPrimo(2);
+  console.log(print);
+} catch (error) {
+  console.log(error.message);
+}
 
 // Suma de dos números: Dado un arreglo de números enteros, se debe retornar el indice de los dos números de los cuales al sumarlos nos de como resultado el número buscado.
 // ejemplo: Input: nums = [3,2,4] target= 6
